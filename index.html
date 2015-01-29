@@ -7,6 +7,8 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/bootstrap.icon-large.css" rel="stylesheet">
     <link href="css/monsterflat-1.0.css" rel="stylesheet">
+	<link href="css/ripples.min.css" rel="stylesheet">
+    <link href="css/material-wfont.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,500,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
@@ -20,27 +22,26 @@
     <![endif]-->
   </head>
   <body data-spy="scroll" data-target=".navbar">
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#about">About me</a></li>
-          <li><a target="_blank" href="http://lattes.cnpq.br/4395562316911904">Resume</a></li>
-          <li><a href="#research">Research</a></li>
-          <li><a href="#projects">Projects</a></li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-
-    </nav>
+  
+  
+	<div class="navbar navbar-default navbar-fixed-top shadow-z-2" role="navigation">
+	  <div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		</button>
+	  </div>
+	  
+	  <div class="navbar-collapse collapse navbar-responsive-collapse">
+		<ul class="nav navbar-nav">
+		  <li class="active"><a href="#about">About me</a></li>
+		  <li><a target="_blank" href="http://lattes.cnpq.br/4395562316911904">Resume</a></li>
+		  <li><a href="#research">Research</a></li>
+		  <li><a href="#projects">Projects</a></li>
+		</ul>
+	  </div>
+	</div>
     <div id="wrapper" class="container">
       <div id="about" class="section">
         <div class="row">
@@ -65,51 +66,56 @@
         </div>
 
         <div class="social row">
-          <a class="col-lg-1 col-md-1 col-sm-2 col-xs-3" href="mailto:matheusv@dcc.ufmg.br"><i class="mf-64 mf-email"></i></a>
-          <a class="col-lg-1 col-md-1 col-sm-2 col-xs-3" target="_blank" href="https://www.facebook.com/matheussvilela"><i class="mf-64 mf-facebook"></i></a>
-          <a class="col-lg-1 col-md-1 col-sm-2 col-xs-3" target="_blank" href="https://github.com/matheusvilela"><i class="mf-64 mf-github"></i></a>
-          <a class="col-lg-1 col-md-1 col-sm-2 col-xs-3" target="_blank" href="https://plus.google.com/+MatheusSilvaVilela"><i class="mf-64 mf-googleplus"></i></a>
+          <a class="col-lg-1 col-md-1 col-sm-2 col-xs-2" href="mailto:matheusv@dcc.ufmg.br"><div class="btn"><i class="mf-64 mf-email"></i></div></a>
+          <a class="col-lg-1 col-md-1 col-sm-2 col-xs-2" target="_blank" href="https://www.facebook.com/matheussvilela"><div class="btn"><i class="mf-64 mf-facebook"></i></div></a>
+          <a class="col-lg-1 col-md-1 col-sm-2 col-xs-2" target="_blank" href="https://github.com/matheusvilela"><div class="btn"><i class="mf-64 mf-github"></i></div></a>
+          <a class="col-lg-1 col-md-1 col-sm-2 col-xs-2" target="_blank" href="https://plus.google.com/+MatheusSilvaVilela"><div class="btn"><i class="mf-64 mf-googleplus"></i></div></a>
+		  <a class="col-lg-1 col-md-1 col-sm-2 col-xs-2" target="_blank" href="https://www.linkedin.com/profile/view?id=360533836"><div class="btn"><i class="mf-64 mf-linkedin"></i></div></a>
         </div>
       </div>
-      <div id="research" class="row section">
-        <div class="col-lg-12">
-          <h1>My research</h1>
-          <p>
-            Compilers rely on two main techniques to implement optimizations that depend on the calling context of functions: inlining and cloning. Historically, function inlining has seen more widespread use, as it tends to be more efective in practice. Yet, function cloning provides benefits that inline leaves behind. In particular, cloning gives the program developer a way to fight performance bugs, because it generates reusable code. Furthermore, it deals with recursion more naturally.
-            Finally, it might lead to less code expansion, the inlining's nemesis.
-          </p>
-          <p>
-            With this research, we revisit function cloning under the light of these benets. 
-            We implement and test some independent optimizations based on function cloning on top of <a target="_blank" href="http://llvm.org/">LLVM</a>.
-          </p>
-        </div>
+      <div id="research" class="section">
+        <h1>My research</h1>
+        <p>
+          Compilers rely on two main techniques to implement optimizations that depend on the calling context of functions: inlining and cloning. Historically, function inlining has seen more widespread use, as it tends to be more efective in practice. Yet, function cloning provides benefits that inline leaves behind. In particular, cloning gives the program developer a way to fight performance bugs, because it generates reusable code. Furthermore, it deals with recursion more naturally.
+          Finally, it might lead to less code expansion, the inlining's nemesis.
+        </p>
+        <p>
+          With this research, we revisit function cloning under the light of these benets. 
+          We implement and test some independent optimizations based on function cloning on top of <a target="_blank" href="http://llvm.org/">LLVM</a>.
+        </p>
       </div>
-      <div id="projects" class="row section">
-        <div class="col-lg-12">
+      <div id="projects" class="section">
+        <div class="row">
           <h1>My projects</h1>
         </div>
-        <a class="col-lg-6 cold-md-6 col-sm-6 col-xs-12" target="_blank" href="https://code.google.com/p/clone-based-opts/">
-          <h2>
-            <i class="icon-large icon-file"></i>
-            Clone-based optimizations
-          </h2>
-          <p>The repository containing all source codes related to our clone-based optimizations.</p>
-        </a>
-        <a class="col-lg-6 cold-md-6 col-sm-6 col-xs-12" target="_blank" href="http://homepages.dcc.ufmg.br/~matheusv/game.html">
-          <h2>
-            <i class="icon-large icon-gamepad"></i>
-            Alice in Clicheland
-          </h2>
-          <p>Alice in Clicheland is a game developed for "Digital Games Development" course at UFMG.</p>
-        </a>
+		<div class="row">
+			<a class="col-lg-5 cold-md-5 col-sm-5 col-xs-12 well" target="_blank" href="https://code.google.com/p/clone-based-opts/">
+			  <h2>
+				<i class="icon-large icon-file"></i>
+				Clone-based optimizations
+			  </h2>
+			  <p>The repository containing all source codes related to our clone-based optimizations.</p>
+			</a>
+			<div class="col-lg-2 cold-md-2 col-sm-2 col-xs-12"></div>
+			<a class="col-lg-5 cold-md-5 col-sm-5 col-xs-12 well" target="_blank" href="https://github.com/matheusvilela/alice-in-clicheland">
+			  <h2>
+				<i class="icon-large icon-gamepad"></i>
+				Alice in Clicheland
+			  </h2>
+			  <p>Alice in Clicheland is a game developed for "Digital Games Development" course at UFMG.</p>
+			</a>
+		</div>
       </div>
     </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/ripples.min.js"></script>
+    <script src="js/material.min.js"></script>
     <script type="text/javascript">
+	    $(document).ready(function() {
+          $.material.init();
+        });
         var alignMiddle = function() {
           var avatarHeight = $('.avatar-col').height();
           var descriptionHeight = $('.description-col').height();
