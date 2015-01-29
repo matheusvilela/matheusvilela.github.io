@@ -64,6 +64,10 @@ h1 {
   text-decoration: underline !important;
   text-align: center;
   color: #009587 !important;
+  min-height: 67px;
+}
+#projects a p {
+  min-height: 60px;
 }
 i {
     margin: 0 auto;
