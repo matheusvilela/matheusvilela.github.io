@@ -15,6 +15,11 @@
 .navbar {
   font-size: 0px;
 }
+.navbar .icon {
+  position: relative;
+  top: -1px;
+  left: 2px;
+}
 .nav {
   font-size: 14px;
 }
