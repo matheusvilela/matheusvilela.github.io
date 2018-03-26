@@ -48,9 +48,9 @@
             <h1>About me</h1>
           </div>
         </div>
-        <div class="row">
+        <div class="row about">
           <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 avatar-col">
-            <img class="img-responsive img-circle avatar" src="http://gravatar.com/avatar/d0b563adacd83b1f4db87dff431a5d85?s=200"></img>
+            <img class="img-responsive img-circle avatar" src="http://gravatar.com/avatar/d0b563adacd83b1f4db87dff431a5d85?s=400"></img>
           </div>
           <div class="col-lg-10 col-md-9 col-sm-8 col-xs-6 description-col">
             <p>
@@ -64,11 +64,10 @@
         </div>
 
         <div class="social row">
-          <a class="col-lg-1 col-md-1 col-sm-2 col-xs-2" href="mailto:matheusvilela@gmail.com"><div class="btn"><i class="mf-64 mf-email"></i></div></a>
-          <a class="col-lg-1 col-md-1 col-sm-2 col-xs-2" target="_blank" href="https://www.facebook.com/matheussvilela"><div class="btn"><i class="mf-64 mf-facebook"></i></div></a>
-          <a class="col-lg-1 col-md-1 col-sm-2 col-xs-2" target="_blank" href="https://github.com/matheusvilela"><div class="btn"><i class="mf-64 mf-github"></i></div></a>
-          <a class="col-lg-1 col-md-1 col-sm-2 col-xs-2" target="_blank" href="https://plus.google.com/+MatheusSilvaVilela"><div class="btn"><i class="mf-64 mf-googleplus"></i></div></a>
-		  <a class="col-lg-1 col-md-1 col-sm-2 col-xs-2" target="_blank" href="https://www.linkedin.com/in/matheussvilela"><div class="btn"><i class="mf-64 mf-linkedin"></i></div></a>
+          <a class="col-lg-1 col-md-1 col-sm-2 col-xs-3" href="mailto:matheusvilela@gmail.com"><i class="mf-64 mf-email"></i></a>
+          <a class="col-lg-1 col-md-1 col-sm-2 col-xs-3" target="_blank" href="https://www.facebook.com/matheussvilela"><i class="mf-64 mf-facebook"></i></a>
+          <a class="col-lg-1 col-md-1 col-sm-2 col-xs-3" target="_blank" href="https://www.instagram.com/matheussvilela/"><i class="mf-64 mf-instagram"></i></a>
+          <a class="col-lg-1 col-md-1 col-sm-2 col-xs-3" target="_blank" href="https://github.com/matheusvilela"><i class="mf-64 mf-github"></i></a>
         </div>
       </div>
       <div id="projects" class="section">
@@ -112,25 +111,6 @@
 	    $(document).ready(function() {
           $.material.init();
         });
-        var alignMiddle = function() {
-          var avatarHeight = $('.avatar-col').height();
-          var descriptionHeight = $('.description-col').height();
-          var difference = Math.abs((avatarHeight - descriptionHeight) / 2);
-          if (avatarHeight < descriptionHeight) {
-            $('.avatar-col').css('margin-top', difference + 'px');
-            $('.description-col').css('margin-top', '0px');
-          } else {
-            $('.description-col').css('margin-top', difference + 'px');
-            $('.avatar-col').css('margin-top', '0px');
-          }
-        };
-        // Detect whether device supports orientationchange event, otherwise fall back to
-        // the resize event.
-        var supportsOrientationChange = "onorientationchange" in window,
-            orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
-
-        $(window).on(orientationEvent, alignMiddle);
-        $(window).on("load resize", alignMiddle);
     </script>
   </body>
 </html>
